@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 
-const gurunabi_data = require("./public/data/gurunabi_data.json");
+const gurunabi_data = require("./db/gurunabi_data.json");
 
 app.use(express.static("public"));
 
