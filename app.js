@@ -1,12 +1,18 @@
 const express = require("express");
 const app = express();
 
-const gurunabi_data = require("./db/gurunabi_data.json");
+const db = require("./knex.js");
 
 app.use(express.static("public"));
 
-app.get("/api/restaurants", (req, res) => {
-  res.status(200).json({ restaurants_info: gurunabi_data });
+app.get("/api/restaurants", async (req, res) => {
+  try {
+    const restaurants = await db("restaurants").select();
+    res.status(200).json({ restaurants_info: restaurants });
+  } catch (err) {
+    console.error("Error", err);
+    res.status(500).end();
+  }
 });
 
 app.get("/", (request, response) => {
