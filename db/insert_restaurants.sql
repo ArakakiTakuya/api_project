@@ -1,5 +1,5 @@
 INSERT INTO restaurants(id, restaurant_name, category, budget, image_url) VALUES
-('f603800','もぅあしびー','沖縄料理と活魚と泡盛',3000,'https://rimage.gnst.jp/rest/img/aprw6xzp0000/t_0nb4.jpg'),
+('f603800','もぅあしびー','沖縄料理と活魚と泡盛',3000,'https://rimage.gnst.jp/rest/img/2kxen71n0000/t_003w.jpg'),
 ('fbkf000','HAMMER II（ハンマーツー）','個室完備のラウンジバー',3000,'https://rimage.gnst.jp/rest/img/aprw6xzp0000/t_0nb4.jpg'),
 ('fawd601','Kimishima','本格フレンチレストラン',7000,'https://rimage.gnst.jp/rest/img/g255sh6j0000/t_001t.jpg'),
 ('f264400','土間土間 沖縄新都心店','和風居酒屋',2500,'https://rimage.gnst.jp/rest/img/s1tp84jx0000/t_0ogr.jpg'),
