@@ -1,6 +1,6 @@
 async function displayResult() {
-  //console.log("click!");
-  const data = await fetch("http://localhost:3000/api/restaurants");
+  const budget = document.querySelector("#budget").value;
+  const data = await fetch(`http://localhost:3000/api/restaurants/${budget}`);
   const datajson = await data.json();
 
   const restaurants_info = datajson.restaurants_info;
@@ -12,7 +12,6 @@ async function displayResult() {
     "検索結果 : 全" + restaurants_info.length + "件";
 
   for (let restaurant of restaurants_info) {
-    console.log(restaurant);
     const div = document.createElement("div");
     div.classList.add("container");
     div.innerHTML = `
