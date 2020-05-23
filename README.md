@@ -2,8 +2,9 @@
 
 Gurume API shows information of restaurants.
 
-「このリポジトリは Code Chrysalis の生徒であるときに作成しました（This was created during my time as a student at Code Chrysalis）」
-Japanes description is below.
+This was created during my time as a student at Code Chrysalis
+(このリポジトリは Code Chrysalis の生徒であるときに作成しました)
+Japanese description is below.
 
 ## To Get Started
 
@@ -65,7 +66,7 @@ DELETE http://localhost:3000/api/restaurants/:id
 
 グルメ API はレストランの情報を表示します。
 
-#　最初に
+## 最初に
 
 まずはオープンソースのデータベースの１つである Postgres をインストールする必要があります。
 
@@ -89,7 +90,7 @@ DELETE http://localhost:3000/api/restaurants/:id
 
 7. yarn start
 
-サーバーを起動します。 http://localhost:3000へ行ってください。
+サーバーを起動します。 http://localhost:3000を利用します。
 
 ## エンドポイント
 
