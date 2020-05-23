@@ -62,6 +62,23 @@ app.post("/api/restaurants", async (req, res) => {
   }
 });
 
+app.patch("/api/restaurants/:id", async (req, res) => {
+  const id = req.params.id;
+  const body = req.body;
+  try {
+    await db("restaurants").where("id", "=", id).update({
+      restaurant_name: body.restaurant_name,
+      category: body.category,
+      budget: body.budget,
+      image_url: body.image_url,
+    });
+    res.status(204).send("updated the data");
+  } catch (err) {
+    console.error("Error", err);
+    res.status(500).end();
+  }
+});
+
 app.delete("/api/restaurants/:id", async (req, res) => {
   const id = req.params.id;
   try {
