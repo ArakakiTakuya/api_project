@@ -43,6 +43,17 @@ app.get("/api/restaurants/:budget", async (req, res) => {
   }
 });
 
+app.delete("/api/restaurants/:id", async (req, res) => {
+  const id = req.params.id;
+  try {
+    await db("restaurants").where("id", "=", id).del();
+    res.status(204).send("deleted the data");
+  } catch (err) {
+    console.error("Error", err);
+    res.status(500).end();
+  }
+});
+
 app.get("/", (request, response) => {
   response.sendFile(__dirname + "/public/index.html");
 });
