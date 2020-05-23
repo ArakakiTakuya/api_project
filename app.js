@@ -5,6 +5,8 @@ const db = require("./knex.js");
 
 app.use(express.static("public"));
 
+app.use(express.json());
+
 app.get("/api/restaurants", async (req, res) => {
   try {
     const restaurants = await db("restaurants").select();
@@ -37,6 +39,23 @@ app.get("/api/restaurants/:budget", async (req, res) => {
         .select();
     }
     res.status(200).json({ restaurants_info: restaurants });
+  } catch (err) {
+    console.error("Error", err);
+    res.status(500).end();
+  }
+});
+
+app.post("/api/restaurants", async (req, res) => {
+  const body = req.body;
+  try {
+    await db("restaurants").insert({
+      id: body.id,
+      restaurant_name: body.restaurant_name,
+      category: body.category,
+      budget: body.budget,
+      image_url: body.image_url,
+    });
+    res.status(201).send("added the data");
   } catch (err) {
     console.error("Error", err);
     res.status(500).end();
