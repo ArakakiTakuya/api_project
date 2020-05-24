@@ -2,7 +2,7 @@
   "name": "api_project",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "225arataku@gmail.com <Namahamu0225>",
+  "author": "Takuya",
   "license": "MIT",
   "scripts": {
     "start": "nodemon app.js",
