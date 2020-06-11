@@ -97,6 +97,8 @@ app.get("*", (request, response) => {
   response.sendFile(path.resolve(__dirname, "public", "index.html"));
 });
 
-app.listen(3000, () => {
-  console.log("Running at Port 3000...");
+const port = process.env.PORT || 4000;
+
+app.listen(port, () => {
+  console.log("App listening on port" + port);
 });
