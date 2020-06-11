@@ -1,7 +1,10 @@
 const express = require("express");
 const app = express();
 
-const db = require("./knex.js");
+const knex = require("knex");
+const config = require("./knexfile");
+console.log(config);
+const db = knex(config);
 
 app.use(express.static("public"));
 
