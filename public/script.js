@@ -1,6 +1,6 @@
 async function displayResult() {
   const budget = document.querySelector("#budget").value;
-  const data = await fetch(`http://localhost:3000/api/restaurants/${budget}`);
+  const data = await fetch(`/api/restaurants/${budget}`);
   const datajson = await data.json();
 
   const restaurants_info = datajson.restaurants_info;

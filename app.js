@@ -1,12 +1,12 @@
 const express = require("express");
 const app = express();
+const path = require("path");
 
 const knex = require("knex");
 const config = require("./knexfile");
-console.log(config);
 const db = knex(config);
 
-app.use(express.static("public"));
+app.use(express.static(path.resolve(__dirname, "public")));
 
 app.use(express.json());
 
@@ -93,8 +93,8 @@ app.delete("/api/restaurants/:id", async (req, res) => {
   }
 });
 
-app.get("/", (request, response) => {
-  response.sendFile(__dirname + "/public/index.html");
+app.get("*", (request, response) => {
+  response.sendFile(path.resolve(__dirname, "public", "index.html"));
 });
 
 app.listen(3000, () => {
